@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Global Hub — Rules</title>
+
+    <meta name="description" content="Official Global Hub Discord Server Rules">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --background: #0b0f19;
+            --background-secondary: #111827;
+            --card: #151c2b;
+            --card-hover: #1b2435;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f4f7fb;
+            --text-secondary: #aab4c5;
+            --accent: #5865f2;
+            --accent-hover: #4752c4;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(88, 101, 242, 0.18),
+                    transparent 35%
+                ),
+                var(--background);
+
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            text-align: center;
+            padding: 70px 20px 35px;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 42px;
+
+            background: linear-gradient(
+                135deg,
+                #5865f2,
+                #7289da
+            );
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 15px 45px rgba(88, 101, 242, 0.3);
+        }
+
+        header h1 {
+            font-size: clamp(36px, 7vw, 58px);
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        /* ---------- LANGUAGE BUTTONS ---------- */
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            margin: 25px auto 45px;
+            padding: 8px;
+
+            width: fit-content;
+
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .language-selector button {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+
+            padding: 11px 18px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: 0.2s ease;
+        }
+
+        .language-selector button:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+        }
+
+        .language-selector button.active {
+            background: var(--accent);
+            color: white;
+
+            box-shadow:
+                0 5px 18px rgba(88, 101, 242, 0.3);
+        }
+
+        /* ---------- MAIN ---------- */
+
+        main {
+            width: min(950px, calc(100% - 30px));
+            margin: auto;
+            padding-bottom: 70px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .intro p {
+            color: var(--text-secondary);
+        }
+
+        /* ---------- RULE CARDS ---------- */
+
+        .rule {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.035),
+                    rgba(255,255,255,0.015)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 25px 28px;
+
+            margin-bottom: 16px;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .rule:hover {
+            transform: translateY(-2px);
+            background: var(--card-hover);
+            border-color: rgba(88, 101, 242, 0.35);
+        }
+
+        .rule h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .rule p {
+            color: var(--text-secondary);
+            white-space: pre-line;
+        }
+
+        /* ---------- FOOTER BOX ---------- */
+
+        .welcome {
+            margin-top: 35px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(88, 101, 242, 0.16),
+                    rgba(88, 101, 242, 0.04)
+                );
+
+            border: 1px solid rgba(88, 101, 242, 0.25);
+
+            border-radius: 18px;
+        }
+
+        .welcome h2 {
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            color: var(--text-secondary);
+        }
+
+        /* ---------- DISCORD BUTTON ---------- */
+
+        .discord-button {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 12px 22px;
+
+            background: var(--accent);
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .discord-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border-top: 1px solid var(--border);
+
+            color: #6f7a8e;
+
+            font-size: 14px;
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding-top: 45px;
+            }
+
+            .language-selector {
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .language-selector button {
+                flex: 1;
+                padding: 10px 8px;
+                font-size: 13px;
+            }
+
+            .rule {
+                padding: 20px;
+            }
+
+            .rule h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🌍
+    </div>
+
+    <h1>GLOBAL HUB</h1>
+
+    <p id="subtitle">
+        Official Community Rules
+    </p>
+
+</header>
+
+
+<!-- LANGUAGE SELECTOR -->
+
+<div class="language-selector">
+
+    <button
+        id="huButton"
+        onclick="changeLanguage('hu')">
+        🇭🇺 Magyar
+    </button>
+
+    <button
+        id="deButton"
+        onclick="changeLanguage('de')">
+        🇩🇪 Deutsch
+    </button>
+
+    <button
+        id="enButton"
+        class="active"
+        onclick="changeLanguage('en')">
+        🇬🇧 English
+    </button>
+
+</div>
+
+
+<main>
+
+    <div class="intro">
+
+        <h2 id="rulesTitle">
+            📜 Server Rules
+        </h2>
+
+        <p id="rulesIntro">
+            Please read and follow these rules while participating in Global Hub.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 1 -->
+
+    <div class="rule">
+
+        <h3 id="rule1Title">
+            1. 🤝 Respect
+        </h3>
+
+        <p id="rule1Text">
+Treat every member with respect, regardless of nationality, age, role or opinion.
+
+Harassment, personal attacks, humiliation and deliberate provocation are not allowed.
+
+Healthy discussions are welcome; personal arguments are not.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 2 -->
+
+    <div class="rule">
+
+        <h3 id="rule2Title">
+            2. 🚫 No Hate
+        </h3>
+
+        <p id="rule2Text">
+Hate speech, discrimination or offensive content targeting individuals or groups is prohibited.
+
+Racist, homophobic, antisemitic or otherwise hateful content is not allowed.
+
+Calling something a joke does not exempt it from the rules.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 3 -->
+
+    <div class="rule">
+
+        <h3 id="rule3Title">
+            3. 💬 Channel Usage
+        </h3>
+
+        <p id="rule3Text">
+Use channels according to their intended purpose.
+
+Do not flood or spam channels.
+
+Moderators may move or remove content posted in the wrong channel.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 4 -->
+
+    <div class="rule">
+
+        <h3 id="rule4Title">
+            4. 📢 Advertising
+        </h3>
+
+        <p id="rule4Text">
+Advertising other servers, communities, services or projects requires permission.
+
+Unsolicited advertising through DMs or mass invitations is prohibited.
+
+Share your own projects only in designated channels.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 5 -->
+
+    <div class="rule">
+
+        <h3 id="rule5Title">
+            5. 🔗 Links & Files
+        </h3>
+
+        <p id="rule5Text">
+Malicious, harmful or misleading files and links are prohibited.
+
+Moderators may remove suspicious links.
+
+Do not share other people's personal information without permission.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 6 -->
+
+    <div class="rule">
+
+        <h3 id="rule6Title">
+            6. 🔞 Inappropriate Content
+        </h3>
+
+        <p id="rule6Text">
+Pornographic, sexually explicit or otherwise inappropriate content is prohibited.
+
+Shock content and excessively violent material are not allowed.
+
+Attempts to bypass these rules are also considered violations.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 7 -->
+
+    <div class="rule">
+
+        <h3 id="rule7Title">
+            7. 🛡️ Privacy
+        </h3>
+
+        <p id="rule7Text">
+Do not share personal information about yourself or others.
+
+Doxxing, threatening exposure or other misuse of personal information is prohibited.
+
+Do not share private messages without the consent of the people involved.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 8 -->
+
+    <div class="rule">
+
+        <h3 id="rule8Title">
+            8. 🎙️ Voice Chat
+        </h3>
+
+        <p id="rule8Text">
+Do not intentionally disrupt other users.
+
+Mic-spamming, excessive noise and soundboard spam are prohibited.
+
+Recording or streaming other users should only be done with appropriate consent.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 9 -->
+
+    <div class="rule">
+
+        <h3 id="rule9Title">
+            9. 🤖 Bots & Exploits
+        </h3>
+
+        <p id="rule9Text">
+Exploiting bots, Discord features or other vulnerabilities is prohibited.
+
+If you discover a vulnerability or bug, report it to the Staff team.
+
+Deliberately disrupting other users or the server is prohibited.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 10 -->
+
+    <div class="rule">
+
+        <h3 id="rule10Title">
+            10. 👮 Staff Decisions
+        </h3>
+
+        <p id="rule10Text">
+The Staff team is responsible for enforcing the rules and maintaining a safe community.
+
+Do not argue about moderation decisions in public channels.
+
+If you disagree with a decision, respectfully appeal through the appropriate ticket or moderation channel.
+
+Staff members are not above the rules.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 11 -->
+
+    <div class="rule">
+
+        <h3 id="rule11Title">
+            11. ⚖️ Punishments
+        </h3>
+
+        <p id="rule11Text">
+Depending on the severity of a violation, the following actions may be taken:
+
+⚠️ Warning
+🔇 Timeout / Mute
+🚫 Kick
+🔨 Ban
+
+Staff will determine the appropriate punishment based on the severity and history of the violation.
+
+Severe violations may result in an immediate ban without prior warning.
+
+Evading punishments may result in additional action.
+        </p>
+
+    </div>
+
+
+    <!-- RULE 12 -->
+
+    <div class="rule">
+
+        <h3 id="rule12Title">
+            12. 🌐 Common Sense
+        </h3>
+
+        <p id="rule12Text">
+Not every possible situation can be listed in the rules, so use common sense.
+
+Staff may take action against behaviour that clearly harms, disrupts or threatens the community, even if the exact situation is not explicitly listed.
+
+Global Hub aims to be a friendly, international and active community.
+        </p>
+
+    </div>
+
+
+    <!-- WELCOME -->
+
+    <div class="welcome">
+
+        <h2 id="welcomeTitle">
+            🌍 Welcome to Global Hub!
+        </h2>
+
+        <p id="welcomeText">
+            Respect the community and help us build a friendly and welcoming server.
+        </p>
+
+        <a
+            class="discord-button"
+            href="https://discord.gg/us9Wm84vUz"
+            target="_blank"
+            id="discordButton">
+            💬 Join Global Hub
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p id="footerText">
+        Global Hub • Official Server Rules
+    </p>
+
+</footer>
+
+
+<script>
+
+    const translations = {
+
+        /* =========================
+           HUNGARIAN
+        ========================= */
+
+        hu: {
+
+            subtitle: "Hivatalos közösségi szabályzat",
+
+            rulesTitle: "📜 Szerver Szabályzat",
+
+            rulesIntro:
+                "Kérjük, olvasd el és tartsd be az alábbi szabályokat a Global Hub használata során.",
+
+            rule1Title: "1. 🤝 Tisztelet",
+
+            rule1Text:
+`Bánj tisztelettel minden taggal, függetlenül a nemzetiségétől, korától, rangjától vagy véleményétől.
+
+Tilos a zaklatás, személyeskedés, megalázás és mások szándékos provokálása.
+
+A kulturált vita megengedett, a személyeskedő vita nem.`,
+
+            rule2Title: "2. 🚫 Gyűlöletkeltés tilalma",
+
+            rule2Text:
+`Tilos bármely személy vagy csoport elleni gyűlöletkeltő, diszkriminatív vagy sértő tartalom.
+
+Tilos a rasszista, homofób, antiszemita vagy más módon gyűlöletkeltő tartalom.
+
+Az, hogy valamit viccnek szánsz, nem mentesít a szabályok alól.`,
+
+            rule3Title: "3. 💬 Csatornák használata",
+
+            rule3Text:
+`Használd a csatornákat a megadott témájuknak megfelelően.
+
+Ne floodold vagy spameld a csatornákat.
+
+A moderátorok áthelyezhetik vagy törölhetik a nem megfelelő csatornába küldött tartalmakat.`,
+
+            rule4Title: "4. 📢 Reklámozás",
+
+            rule4Text:
+`Más szerverek, közösségek, szolgáltatások vagy projektek reklámozása csak engedéllyel megengedett.
+
+Kéretlen DM-reklám és tömeges meghívó küldése tilos.
+
+Saját projektedet csak a kijelölt csatornákban oszd meg.`,
+
+            rule5Title: "5. 🔗 Linkek és fájlok",
+
+            rule5Text:
+`Tilos káros, megtévesztő vagy rosszindulatú fájlok és linkek megosztása.
+
+A moderátorok eltávolíthatják a gyanús linkeket.
+
+Ne ossz meg másokról személyes adatokat engedély nélkül.`,
+
+            rule6Title: "6. 🔞 Nem megfelelő tartalom",
+
+            rule6Text:
+`A pornográf, szexuálisan explicit vagy egyéb, a közösség számára nem megfelelő tartalom tilos.
+
+Tilos sokkoló vagy indokolatlanul erőszakos tartalmak megosztása.
+
+A szabályok megkerülésére tett kísérlet ugyanúgy szabálysértésnek minősül.`,
+
+            rule7Title: "7. 🛡️ Adatvédelem",
+
+            rule7Text:
+`Ne ossz meg személyes adatokat saját magadról vagy másokról.
+
+Tilos a doxxolás, mások személyes adatainak fenyegető közzététele vagy azokkal való visszaélés.
+
+Mások privát üzeneteit csak az érintettek beleegyezésével oszd meg.`,
+
+            rule8Title: "8. 🎙️ Hangcsatornák",
+
+            rule8Text:
+`Ne zavard szándékosan a többi felhasználót.
+
+Tilos a mikrofon spam, a túlzott zajkeltés és a soundboard spam.
+
+Mások felvétele vagy streamelése csak megfelelő beleegyezéssel történhet.`,
+
+            rule9Title: "9. 🤖 Botok és exploitok",
+
+            rule9Text:
+`Tilos a botok, Discord-funkciók vagy egyéb hibák és sérülékenységek kihasználása.
+
+Ha hibát vagy sérülékenységet találsz, jelentsd a Staff csapatnak.
+
+Tilos más felhasználók vagy a szerver működésének szándékos megzavarása.`,
+
+            rule10Title: "10. 👮 Staff döntések",
+
+            rule10Text:
+`A Staff csapat feladata a szabályok betartatása és a közösség biztonságának fenntartása.
+
+Ne vitasd meg a moderációs döntéseket nyilvános csatornákban.
+
+Ha nem értesz egyet egy döntéssel, kulturáltan jelezd a megfelelő ticket- vagy moderációs csatornán.
+
+A Staff tagok sem állnak a szabályok felett.`,
+
+            rule11Title: "11. ⚖️ Szankciók",
+
+            rule11Text:
+`A szabályszegés súlyosságától függően az alábbi intézkedések alkalmazhatók:
+
+⚠️ Figyelmeztetés
+🔇 Timeout / Némítás
+🚫 Kick / Kizárás
+🔨 Ban / Kitiltás
+
+A Staff a szabályszegés súlyossága és előzményei alapján dönt a megfelelő szankcióról.
+
+Súlyos esetben figyelmeztetés nélkül is alkalmazható azonnali kitiltás.
+
+A büntetések kijátszása további szankciót vonhat maga után.`,
+
+            rule12Title: "12. 🌐 Józan ész",
+
+            rule12Text:
+`Nem lehet minden lehetséges helyzetet külön felsorolni, ezért használd a józan eszed.
+
+A Staff intézkedhet olyan viselkedéssel szemben, amely egyértelműen károsítja, zavarja vagy veszélyezteti a közösséget, még akkor is, ha az adott eset nincs szó szerint felsorolva.
+
+A Global Hub célja egy barátságos, nemzetközi és aktív közösség létrehozása.`,
+
+            welcomeTitle:
+                "🌍 Üdvözlünk a Global Hubban!",
+
+            welcomeText:
+                "Tartsd tiszteletben a közösséget, és segíts egy barátságos, befogadó szerver kialakításában.",
+
+            discordButton:
+                "💬 Csatlakozás a Global Hubhoz",
+
+            footerText:
+                "Global Hub • Hivatalos szerver szabályzat"
+        },
+
+
+        /* =========================
+           GERMAN
+        ========================= */
+
+        de: {
+
+            subtitle: "Offizielle Community-Regeln",
+
+            rulesTitle: "📜 Serverregeln",
+
+            rulesIntro:
+                "Bitte lies und befolge diese Regeln während deiner Teilnahme am Global Hub.",
+
+            rule1Title: "1. 🤝 Respekt",
+
+            rule1Text:
+`Behandle jedes Mitglied respektvoll, unabhängig von Nationalität, Alter, Rolle oder Meinung.
+
+Belästigung, persönliche Angriffe, Demütigung und absichtliche Provokation sind nicht erlaubt.
+
+Sachliche Diskussionen sind willkommen; persönliche Auseinandersetzungen nicht.`,
+
+            rule2Title: "2. 🚫 Kein Hass",
+
+            rule2Text:
+`Hassrede, Diskriminierung oder beleidigende Inhalte gegen Personen oder Gruppen sind verboten.
+
+Rassistische, homophobe, antisemitische oder anderweitig hasserfüllte Inhalte sind nicht erlaubt.
+
+Etwas als Witz zu bezeichnen, macht es nicht von den Regeln ausgenommen.`,
+
+            rule3Title: "3. 💬 Nutzung der Kanäle",
+
+            rule3Text:
+`Nutze die Kanäle entsprechend ihrem vorgesehenen Zweck.
+
+Flooding und Spam sind nicht erlaubt.
+
+Moderatoren können Inhalte verschieben oder entfernen, wenn sie im falschen Kanal gepostet wurden.`,
+
+            rule4Title: "4. 📢 Werbung",
+
+            rule4Text:
+`Werbung für andere Server, Communities, Dienste oder Projekte ist nur mit Genehmigung erlaubt.
+
+Unerwünschte Werbung per DM oder das massenhafte Versenden von Einladungen ist verboten.
+
+Teile deine eigenen Projekte nur in dafür vorgesehenen Kanälen.`,
+
+            rule5Title: "5. 🔗 Links & Dateien",
+
+            rule5Text:
+`Schädliche, irreführende oder bösartige Dateien und Links sind verboten.
+
+Moderatoren können verdächtige Links entfernen.
+
+Teile keine persönlichen Daten anderer Personen ohne deren Zustimmung.`,
+
+            rule6Title: "6. 🔞 Unangemessene Inhalte",
+
+            rule6Text:
+`Pornografische, sexuell explizite oder anderweitig unangemessene Inhalte sind verboten.
+
+Schockierende oder unnötig gewalttätige Inhalte sind nicht erlaubt.
+
+Versuche, diese Regeln zu umgehen, gelten ebenfalls als Regelverstoß.`,
+
+            rule7Title: "7. 🛡️ Datenschutz",
+
+            rule7Text:
+`Teile keine persönlichen Informationen über dich oder andere Personen.
+
+Doxxing, die bedrohliche Veröffentlichung persönlicher Informationen oder deren Missbrauch ist verboten.
+
+Teile private Nachrichten nicht ohne die Zustimmung der betroffenen Personen.`,
+
+            rule8Title: "8. 🎙️ Sprachkanäle",
+
+            rule8Text:
+`Störe andere Nutzer nicht absichtlich.
+
+Mikrofon-Spam, übermäßiger Lärm und Soundboard-Spam sind verboten.
+
+Das Aufnehmen oder Streamen anderer Nutzer sollte nur mit entsprechender Zustimmung erfolgen.`,
+
+            rule9Title: "9. 🤖 Bots & Exploits",
+
+            rule9Text:
+`Das Ausnutzen von Bots, Discord-Funktionen oder anderen Schwachstellen ist verboten.
+
+Wenn du einen Fehler oder eine Schwachstelle entdeckst, melde sie dem Staff-Team.
+
+Das absichtliche Stören anderer Nutzer oder des Servers ist verboten.`,
+
+            rule10Title: "10. 👮 Entscheidungen des Staffs",
+
+            rule10Text:
+`Das Staff-Team ist für die Durchsetzung der Regeln und die Sicherheit der Community verantwortlich.
+
+Diskutiere Moderationsentscheidungen nicht in öffentlichen Kanälen.
+
+Wenn du mit einer Entscheidung nicht einverstanden bist, kannst du sie respektvoll über das entsprechende Ticket- oder Moderationssystem anfechten.
+
+Staff-Mitglieder stehen nicht über den Regeln.`,
+
+            rule11Title: "11. ⚖️ Strafen",
+
+            rule11Text:
+`Je nach Schwere eines Regelverstoßes können folgende Maßnahmen ergriffen werden:
+
+⚠️ Verwarnung
+🔇 Timeout / Stummschaltung
+🚫 Kick
+🔨 Ban
+
+Das Staff-Team entscheidet anhand der Schwere und Vorgeschichte des Verstoßes über die angemessene Maßnahme.
+
+Schwere Verstöße können auch ohne vorherige Verwarnung zu einem sofortigen Ban führen.
+
+Das Umgehen von Strafen kann zu weiteren Maßnahmen führen.`,
+
+            rule12Title: "12. 🌐 Gesunder Menschenverstand",
+
+            rule12Text:
+`Nicht jede mögliche Situation kann in den Regeln aufgeführt werden. Nutze daher deinen gesunden Menschenverstand.
+
+Das Staff-Team kann gegen Verhalten vorgehen, das der Community eindeutig schadet, sie stört oder gefährdet, auch wenn die konkrete Situation nicht ausdrücklich aufgeführt ist.
+
+Global Hub soll eine freundliche, internationale und aktive Community sein.`,
+
+            welcomeTitle:
+                "🌍 Willkommen im Global Hub!",
+
+            welcomeText:
+                "Respektiere die Community und hilf uns dabei, einen freundlichen und offenen Server aufzubauen.",
+
+            discordButton:
+                "💬 Global Hub beitreten",
+
+            footerText:
+                "Global Hub • Offizielle Serverregeln"
+        },
+
+
+        /* =========================
+           ENGLISH
+        ========================= */
+
+        en: {
+
+            subtitle: "Official Community Rules",
+
+            rulesTitle: "📜 Server Rules",
+
+            rulesIntro:
+                "Please read and follow these rules while participating in Global Hub.",
+
+            rule1Title: "1. 🤝 Respect",
+
+            rule1Text:
+`Treat every member with respect, regardless of nationality, age, role or opinion.
+
+Harassment, personal attacks, humiliation and deliberate provocation are not allowed.
+
+Healthy discussions are welcome; personal arguments are not.`,
+
+            rule2Title: "2. 🚫 No Hate",
+
+            rule2Text:
+`Hate speech, discrimination or offensive content targeting individuals or groups is prohibited.
+
+Racist, homophobic, antisemitic or otherwise hateful content is not allowed.
+
+Calling something a joke does not exempt it from the rules.`,
+
+            rule3Title: "3. 💬 Channel Usage",
+
+            rule3Text:
+`Use channels according to their intended purpose.
+
+Do not flood or spam channels.
+
+Moderators may move or remove content posted in the wrong channel.`,
+
+            rule4Title: "4. 📢 Advertising",
+
+            rule4Text:
+`Advertising other servers, communities, services or projects requires permission.
+
+Unsolicited advertising through DMs or mass invitations is prohibited.
+
+Share your own projects only in designated channels.`,
+
+            rule5Title: "5. 🔗 Links & Files",
+
+            rule5Text:
+`Malicious, harmful or misleading files and links are prohibited.
+
+Moderators may remove suspicious links.
+
+Do not share other people's personal information without permission.`,
+
+            rule6Title: "6. 🔞 Inappropriate Content",
+
+            rule6Text:
+`Pornographic, sexually explicit or otherwise inappropriate content is prohibited.
+
+Shock content and excessively violent material are not allowed.
+
+Attempts to bypass these rules are also considered violations.`,
+
+            rule7Title: "7. 🛡️ Privacy",
+
+            rule7Text:
+`Do not share personal information about yourself or others.
+
+Doxxing, threatening exposure or other misuse of personal information is prohibited.
+
+Do not share private messages without the consent of the people involved.`,
+
+            rule8Title: "8. 🎙️ Voice Chat",
+
+            rule8Text:
+`Do not intentionally disrupt other users.
+
+Mic-spamming, excessive noise and soundboard spam are prohibited.
+
+Recording or streaming other users should only be done with appropriate consent.`,
+
+            rule9Title: "9. 🤖 Bots & Exploits",
+
+            rule9Text:
+`Exploiting bots, Discord features or other vulnerabilities is prohibited.
+
+If you discover a vulnerability or bug, report it to the Staff team.
+
+Deliberately disrupting other users or the server is prohibited.`,
+
+            rule10Title: "10. 👮 Staff Decisions",
+
+            rule10Text:
+`The Staff team is responsible for enforcing the rules and maintaining a safe community.
+
+Do not argue about moderation decisions in public channels.
+
+If you disagree with a decision, respectfully appeal through the appropriate ticket or moderation channel.
+
+Staff members are not above the rules.`,
+
+            rule11Title: "11. ⚖️ Punishments",
+
+            rule11Text:
+`Depending on the severity of a violation, the following actions may be taken:
+
+⚠️ Warning
+🔇 Timeout / Mute
+🚫 Kick
+🔨 Ban
+
+Staff will determine the appropriate punishment based on the severity and history of the violation.
+
+Severe violations may result in an immediate ban without prior warning.
+
+Evading punishments may result in additional action.`,
+
+            rule12Title: "12. 🌐 Common Sense",
+
+            rule12Text:
+`Not every possible situation can be listed in the rules, so use common sense.
+
+Staff may take action against behaviour that clearly harms, disrupts or threatens the community, even if the exact situation is not explicitly listed.
+
+Global Hub aims to be a friendly, international and active community.`,
+
+            welcomeTitle:
+                "🌍 Welcome to Global Hub!",
+
+            welcomeText:
+                "Respect the community and help us build a friendly and welcoming server.",
+
+            discordButton:
+                "💬 Join Global Hub",
+
+            footerText:
+                "Global Hub • Official Server Rules"
+        }
+
+    };
+
+
+    function changeLanguage(language) {
+
+        const text = translations[language];
+
+        document.documentElement.lang = language;
+
+        document.getElementById("subtitle").textContent =
+            text.subtitle;
+
+        document.getElementById("rulesTitle").textContent =
+            text.rulesTitle;
+
+        document.getElementById("rulesIntro").textContent =
+            text.rulesIntro;
+
+
+        for (let i = 1; i <= 12; i++) {
+
+            document.getElementById(`rule${i}Title`).textContent =
+                text[`rule${i}Title`];
+
+            document.getElementById(`rule${i}Text`).textContent =
+                text[`rule${i}Text`];
+
+        }
+
+
+        document.getElementById("welcomeTitle").textContent =
+            text.welcomeTitle;
+
+        document.getElementById("welcomeText").textContent =
+            text.welcomeText;
+
+        document.getElementById("discordButton").textContent =
+            text.discordButton;
+
+        document.getElementById("footerText").textContent =
+            text.footerText;
+
+
+        /* Active button */
+
+        document
+            .querySelectorAll(".language-selector button")
+            .forEach(button => button.classList.remove("active"));
+
+        document
+            .getElementById(language + "Button")
+            .classList.add("active");
+    }
+
+
+    /* English is the default language */
+
+    changeLanguage("en");
+
+</script>
+</body>
+</html>
